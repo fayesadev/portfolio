@@ -1,8 +1,12 @@
+'use client'
+
 import Image from "next/image";
+import Navbar from './components/Navbar';
 
 export default function Home() {
   return (
     <main>
+      <Navbar />
       <div>
         <h1>Hey, I'm Faye and I'm A Web Developer</h1>
         <h3>Building applications that enrich user experience.</h3>

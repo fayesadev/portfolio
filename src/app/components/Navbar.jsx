@@ -1,3 +1,5 @@
+
+
 import Link from "next/link";
 import Image from "next/image";
 import React, { useState } from "react";
@@ -34,3 +36,5 @@ const Navbar = () => {
     </header>
   );
 };
+
+export default Navbar;
