@@ -7,7 +7,7 @@ import NavItem from "./NavItem";
 const MENU_LIST = [
   { text: "Home", href: "/" },
   { text: "About Us", href: "/about" },
-  { text: "Contact", href: "/contact"},
+  { text: "Contact", href: "/contact" },
 ];
 
 const Navbar = () => {
@@ -15,6 +15,22 @@ const Navbar = () => {
   const [activeIdx, setActiveIdx] = useState(-1);
 
   return (
-    
-  )
-}
+    <header>
+      <nav className={`nav`}>
+        <Link href={"/"}>
+          <a>
+            <h1 className="logo">FayeTheDev</h1>
+          </a>
+        </Link>
+        <div
+          onClick={() => setNavActive(!navActive)}
+          className={`nav__menu-bar`}
+        >
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </nav>
+    </header>
+  );
+};
