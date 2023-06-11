@@ -1,5 +1,3 @@
-
-
 import Link from "next/link";
 import Image from "next/image";
 import React, { useState } from "react";
@@ -19,10 +17,8 @@ const Navbar = () => {
   return (
     <header>
       <nav className={`nav`}>
-        <Link href={"/"}>
-          <a>
-            <h1 className="logo">FayeTheDev</h1>
-          </a>
+        <Link href={"/"} className="logo">
+          FayeTheDev
         </Link>
         <div
           onClick={() => setNavActive(!navActive)}
@@ -31,6 +27,19 @@ const Navbar = () => {
           <div></div>
           <div></div>
           <div></div>
+        </div>
+        <div className={`${navActive ? "active" : ""} nav__menu-list`}>
+          {MENU_LIST.map((menu, idx) => (
+            <div
+              onClick={() => {
+                setActiveIdx(idx);
+                setNavActive(false);
+              }}
+              key={menu.text}
+            >
+              <NavItem active={activeIdx === idx} {...menu} />
+            </div>
+          ))}
         </div>
       </nav>
     </header>
